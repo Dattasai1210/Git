@@ -1,0 +1,288 @@
+
+DSG@Datta MINGW64 ~
+$ git --version
+git version 2.39.1.windows.1
+
+DSG@Datta MINGW64 ~
+$ mkdir programs
+
+DSG@Datta MINGW64 ~
+$ cd programs
+
+DSG@Datta MINGW64 ~/programs
+$ git init
+Initialized empty Git repository in C:/Users/DSG/programs/.git/
+
+DSG@Datta MINGW64 ~/programs (master)
+$ vi add.c
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git add add.c
+warning: in the working copy of 'add.c', LF will be replaced by CRLF the next time Git touches it
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   add.c
+
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git config --global user.name "Dattasai1210"
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git config --global user.email "sai.datta@thundersoft.com"
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git commit -m "first commit"
+[master (root-commit) c4e7633] first commit
+ 1 file changed, 9 insertions(+)
+ create mode 100644 add.c
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git log
+commit c4e76335768a5fdeadab457da023caf0dfc6b104 (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Fri Jan 20 09:54:37 2023 +0530
+
+    first commit
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git show
+commit c4e76335768a5fdeadab457da023caf0dfc6b104 (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Fri Jan 20 09:54:37 2023 +0530
+
+    first commit
+
+diff --git a/add.c b/add.c
+new file mode 100644
+index 0000000..b3645b2
+--- /dev/null
++++ b/add.c
+@@ -0,0 +1,9 @@
++#include<stdio.h>
++int main()
++{
++       int a,b,sum=0;
++       printf("enter values of a and b:");
++       scanf("%d %d",&a,&b);
++       sum=a+b;
++       printf("sum of a and b:%d",sum);
++}
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git remote add origin https://github.com/Dattasai1210/Git.git
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 164.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Dattasai1210/Git.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git pull https://github.com/Dattasai1210/Git.git master
+From https://github.com/Dattasai1210/Git
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git branch
+* master
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git branch feature
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git branch
+  feature
+* master
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+DSG@Datta MINGW64 ~/programs (feature)
+$ ls
+add.c
+
+DSG@Datta MINGW64 ~/programs (feature)
+$ vi add.c
+
+DSG@Datta MINGW64 ~/programs (feature)
+$ git add .
+warning: in the working copy of 'add.c', LF will be replaced by CRLF the next time Git touches it
+
+DSG@Datta MINGW64 ~/programs (feature)
+$ git commit -m "feature commit"
+[feature d59a1ad] feature commit
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+DSG@Datta MINGW64 ~/programs (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git merge feature
+Updating c4e7633..d59a1ad
+Fast-forward
+ add.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git branch -d feature
+Deleted branch feature (was d59a1ad).
+
+DSG@Datta MINGW64 ~/programs (master)
+$ git checkout -b new
+Switched to a new branch 'new'
+
+DSG@Datta MINGW64 ~/programs (new)
+$ vi add.c
+
+DSG@Datta MINGW64 ~/programs (new)
+$ git add .
+
+DSG@Datta MINGW64 ~/programs (new)
+$ git commit -m "new"
+[new ce9c53e] new
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+DSG@Datta MINGW64 ~/programs (new)
+$ cd ..
+
+DSG@Datta MINGW64 ~
+$ mkdir solutions
+
+DSG@Datta MINGW64 ~
+$ cd solutions
+
+DSG@Datta MINGW64 ~/solutions
+$ git clone https://github.com/Dattasai1210/Git.git
+Cloning into 'Git'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+DSG@Datta MINGW64 ~/solutions
+$ ls
+Git/
+
+DSG@Datta MINGW64 ~/solutions
+$ ls
+Git/
+
+DSG@Datta MINGW64 ~/solutions
+$ cd Git/
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ ls
+add.c
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git pull origin master
+From https://github.com/Dattasai1210/Git
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ ls
+add.c
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ vi sub.c
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git add .
+warning: in the working copy of 'sub.c', LF will be replaced by CRLF the next time Git touches it
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git commit -m "remote"
+[master 6883cb7] remote
+ 1 file changed, 9 insertions(+)
+ create mode 100644 sub.c
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Dattasai1210/Git.git
+   c4e7633..6883cb7  master -> master
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git stash -u
+No local changes to save
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git stash list
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git stash show
+No stash entries found.
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git stash apply
+No stash entries found.
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git log
+commit 6883cb7efc51c1376a991bac8f83564e9ac7c55d (HEAD -> master, origin/master, origin/HEAD)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Fri Jan 20 10:07:21 2023 +0530
+
+    remote
+
+commit c4e76335768a5fdeadab457da023caf0dfc6b104
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Fri Jan 20 09:54:37 2023 +0530
+
+    first commit
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git log --oneline
+6883cb7 (HEAD -> master, origin/master, origin/HEAD) remote
+c4e7633 first commit
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git revert 6883cb7
+[master 22f9ac1] Revert "remote"
+ 1 file changed, 9 deletions(-)
+ delete mode 100644 sub.c
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$ git rebase master
+Current branch master is up to date.
+
+DSG@Datta MINGW64 ~/solutions/Git (master)
+$
